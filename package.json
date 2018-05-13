@@ -2,10 +2,11 @@
   "name": "iasync",
   "version": "0.0.1",
   "description": "async functions set",
-  "main": "index.js",
+  "main": "build/index.js",
   "scripts": {
     "test": "jasmine --config=specs/config/jasmine.json",
-    "eslint": "eslint ./src ./specs --fix"
+    "eslint": "eslint ./src ./specs --fix",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -30,6 +31,7 @@
     "eslint-plugin-import": "2.11.0",
     "eslint-plugin-jasmine": "^2.10.0",
     "jasmine": "3.1.0",
-    "webpack": "4.8.3"
+    "webpack": "4.8.3",
+    "webpack-cli": "^2.1.3"
   }
 }

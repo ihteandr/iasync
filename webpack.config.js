@@ -5,20 +5,20 @@ module.exports = {
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'build'),
-        filename: 'main.bundle.js'
+        filename: 'index.js',
     },
     module: {
-        loaders: [
+        rules: [
             {
                 test: /\.js$/,
                 loader: 'babel-loader',
-                query: {
-                    presets: ['es2015']
-                }
-            }
-        ]
+                options: {
+                    presets: ['es2015'],
+                },
+            },
+        ],
     },
     stats: {
-        colors: true
+        colors: true,
     },
 };
