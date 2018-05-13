@@ -1,0 +1,35 @@
+{
+  "name": "iasync",
+  "version": "0.0.1",
+  "description": "async functions set",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine --config=specs/config/jasmine.json",
+    "eslint": "eslint ./src ./specs --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ihteandr/async.git"
+  },
+  "keywords": [
+    "async",
+    "iasync",
+    "js",
+    "callbacks"
+  ],
+  "author": "Vladimir Ghukasyan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ihteandr/async/issues"
+  },
+  "homepage": "https://github.com/ihteandr/async#readme",
+  "devDependencies": {
+    "babel-loader": "7.1.4",
+    "eslint": "4.19.1",
+    "eslint-config-airbnb-base": "12.1.0",
+    "eslint-plugin-import": "2.11.0",
+    "eslint-plugin-jasmine": "^2.10.0",
+    "jasmine": "3.1.0",
+    "webpack": "4.8.3"
+  }
+}
