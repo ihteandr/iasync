@@ -1,12 +1,15 @@
 const path = require('path');
-const webpack = require('webpack');
 
 module.exports = {
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'build'),
         filename: 'index.js',
+        library: 'iasync',
+        libraryTarget: 'umd',
     },
+    mode: 'development',
+    target: 'node',
     module: {
         rules: [
             {
@@ -14,6 +17,7 @@ module.exports = {
                 loader: 'babel-loader',
                 options: {
                     presets: ['es2015'],
+                    plugins: ['transform-object-rest-spread'],
                 },
             },
         ],

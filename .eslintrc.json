@@ -7,6 +7,11 @@
     "jasmine": true
   },
   "rules": {
-    "indent": ["error", 4]
+    "indent": ["error", 4],
+    "import/prefer-default-export": 0,
+    "prefer-rest-params": 0,
+    "no-plusplus": 0,
+    "no-underscore-dangle": 0,
+    "no-use-before-define": 0
   }
 }
