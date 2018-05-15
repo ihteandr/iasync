@@ -43,6 +43,18 @@ describe('parallel callAll spec', () => {
             done();
         });
     });
+    it('async-promise: check check error', (done) => {
+        iasync.parallel.callAll([
+            async () => { throw new Error('error'); },
+            async () => 2,
+        ]).then(() => {
+            expect(false).toBe(true);
+            done();
+        }, (err) => {
+            expect(err).toBeDefined();
+            done();
+        });
+    });
     it('check result as a object', (done) => {
         iasync.parallel.callAll({
             a: callback => callback(null, 'a'),

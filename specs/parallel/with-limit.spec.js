@@ -30,6 +30,16 @@ describe('parallel withLimit spec', () => {
             done();
         });
     });
+    it('async: check error', (done) => {
+        iasync.parallel.withLimit(10, true)([
+            async () => { throw new Error('error'); },
+            async () => 2,
+        ], (error, result) => {
+            expect(error).toBeDefined();
+            expect(result).toBeUndefined(2);
+            done();
+        });
+    });
     it('async-promise: check result', (done) => {
         iasync.parallel.withLimit(10, true)([
             async () => 1,
@@ -40,6 +50,18 @@ describe('parallel withLimit spec', () => {
             done();
         }, () => {
             expect(false).toBe(true);
+            done();
+        });
+    });
+    it('async-promise: check error', (done) => {
+        iasync.parallel.withLimit(10, true)([
+            async () => { throw new Error('error'); },
+            async () => 2,
+        ]).then(() => {
+            expect(false).toBe(true);
+            done();
+        }, (err) => {
+            expect(err).toBeDefined();
             done();
         });
     });

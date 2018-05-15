@@ -39,6 +39,17 @@ describe('parallel call amount spec', () => {
             done();
         });
     });
+    it('async-promise: check error', (done) => {
+        iasync.parallel.callAmount(10)(20, async () => {
+            throw new Error('error');
+        }).then(() => {
+            expect(false).toBe(true);
+            done();
+        }, (err) => {
+            expect(err).toBeDefined();
+            done();
+        });
+    });
     it('calculate sum', (done) => {
         let sum = 0;
         iasync.parallel.callAmount(10)(5, (num, callback) => {
