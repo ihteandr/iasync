@@ -14,6 +14,7 @@
   },
   "keywords": [
     "async",
+    "promise",
     "iasync",
     "js",
     "callbacks"
