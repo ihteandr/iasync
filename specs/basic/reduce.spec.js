@@ -1,4 +1,4 @@
-const iasync = require('../../build/index').default;
+const iasync = require('../../build/index');
 
 describe('reduce specs', () => {
     it('empty array', (done) => {
