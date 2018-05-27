@@ -1,7 +1,7 @@
 import { onlyOnce, makeAsync, preventWhenError, promisify } from '../helpers';
 
-export function callAmount(limit) {
-    return (amount, iterator, cb) => promisify(cb, (callback) => {
+export function callAmount(amount) {
+    return (limit, iterator, cb) => promisify(cb, (callback) => {
         const _callback = onlyOnce(makeAsync(callback));
         const _iterator = makeAsync(iterator);
         let running = 0;

@@ -2,7 +2,7 @@ const iasync = require('../../build/index');
 
 describe('parallel call amount spec', () => {
     it('0 amount', (done) => {
-        iasync.parallel.callAmount(10)(0, () => {
+        iasync.parallel.callAmount(0)(10, () => {
             expect(false).toBe(true);
         }, () => {
             done();
@@ -10,7 +10,7 @@ describe('parallel call amount spec', () => {
     });
     it('check calls amount', (done) => {
         let count = 0;
-        iasync.parallel.callAmount(10)(20, (num, callback) => {
+        iasync.parallel.callAmount(20)(10, (num, callback) => {
             count += 1;
             callback();
         }, () => {
@@ -20,7 +20,7 @@ describe('parallel call amount spec', () => {
     });
     it('async: check calls amount', (done) => {
         let count = 0;
-        iasync.parallel.callAmount(10)(20, async () => {
+        iasync.parallel.callAmount(20)(10, async () => {
             count += 1;
         }, () => {
             expect(count).toBe(20);
@@ -29,7 +29,7 @@ describe('parallel call amount spec', () => {
     });
     it('async-promise: check calls amount', (done) => {
         let count = 0;
-        iasync.parallel.callAmount(10)(20, async () => {
+        iasync.parallel.callAmount(20)(10, async () => {
             count += 1;
         }).then(() => {
             expect(count).toBe(20);
@@ -40,7 +40,7 @@ describe('parallel call amount spec', () => {
         });
     });
     it('async-promise: check error', (done) => {
-        iasync.parallel.callAmount(10)(20, async () => {
+        iasync.parallel.callAmount(20)(10, async () => {
             throw new Error('error');
         }).then(() => {
             expect(false).toBe(true);
@@ -52,7 +52,7 @@ describe('parallel call amount spec', () => {
     });
     it('calculate sum', (done) => {
         let sum = 0;
-        iasync.parallel.callAmount(10)(5, (num, callback) => {
+        iasync.parallel.callAmount(5)(10, (num, callback) => {
             sum += num;
             callback();
         }, () => {
@@ -62,7 +62,7 @@ describe('parallel call amount spec', () => {
     });
     it('async: calculate sum', (done) => {
         let sum = 0;
-        iasync.parallel.callAmount(10)(5, async (num) => {
+        iasync.parallel.callAmount(5)(10, async (num) => {
             sum += num;
         }, () => {
             expect(sum).toBe(10);
@@ -71,7 +71,7 @@ describe('parallel call amount spec', () => {
     });
     it('async-promise: calculate sum', (done) => {
         let sum = 0;
-        iasync.parallel.callAmount(10)(5, async (num) => {
+        iasync.parallel.callAmount(5)(10, async (num) => {
             sum += num;
         }).then(() => {
             expect(sum).toBe(10);
