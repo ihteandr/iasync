@@ -7,7 +7,7 @@
 		exports["iasync"] = factory();
 	else
 		root["iasync"] = factory();
-})(global, function() {
+})(window, function() {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};

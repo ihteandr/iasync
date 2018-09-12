@@ -10,7 +10,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ihteandr/async.git"
+    "url": "git+https://github.com/ihteandr/iasync.git"
+  },
+  "browser": {
+    "./build/index.js": "./build/index.browser.js"
   },
   "keywords": [
     "async",
@@ -19,12 +22,15 @@
     "js",
     "callbacks"
   ],
-  "author": "Vladimir Ghukasyan",
+  "author": {
+    "name": "Vladimir Ghukasyan",
+    "email": "ghukasyan.vladimir@gmail.com"
+  },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ihteandr/async/issues"
+    "url": "https://github.com/ihteandr/iasync/issues"
   },
-  "homepage": "https://github.com/ihteandr/async#readme",
+  "homepage": "https://github.com/ihteandr/iasync#readme",
   "devDependencies": {
     "babel-loader": "7.1.4",
     "babel-plugin-transform-object-rest-spread": "6.26.0",

@@ -1,15 +1,7 @@
 const path = require('path');
-
-module.exports = {
+const options = {
     entry: './src/index.js',
-    output: {
-        path: path.resolve(__dirname, 'build'),
-        filename: 'index.js',
-        library: 'iasync',
-        libraryTarget: 'umd',
-    },
     mode: 'development',
-    target: 'node',
     module: {
         rules: [
             {
@@ -26,3 +18,23 @@ module.exports = {
         colors: true,
     },
 };
+module.exports = [
+    Object.assign({}, options, {
+        output: {
+            path: path.resolve(__dirname, 'build'),
+            filename: 'index.js',
+            library: 'iasync',
+            libraryTarget: 'umd',
+        },
+        target: 'node'
+    }),
+    Object.assign({}, options, {
+        output: {
+            path: path.resolve(__dirname, 'build'),
+            filename: 'index.browser.js',
+            library: 'iasync',
+            libraryTarget: 'umd',
+        },
+        target: 'web'
+    }),
+];
