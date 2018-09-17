@@ -4,6 +4,7 @@
   "description": "async functions set",
   "main": "build/index.js",
   "scripts": {
+    "prepublish": "npm run build",
     "test": "jasmine --config=specs/config/jasmine.json",
     "eslint": "eslint ./src ./specs --fix",
     "build": "webpack"
